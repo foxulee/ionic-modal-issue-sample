@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
+import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-tab3',
@@ -7,7 +8,13 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class Tab3Page {
-
-  constructor() {}
+  contentOnModal: any;
+  contentOnPage: any;
+  sanitizer = inject(DomSanitizer);
+  constructor() {
+    this.contentOnPage = `
+    <div style="color: red">Here is the content with sanitizer (sanitizer = inject(DomSanitizer); sanitizer.bypassSecurityTrustHtml(contentOnPage)).</div>
+    `
+  }
 
 }
