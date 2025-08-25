@@ -16,10 +16,18 @@
   </ion-header>
 
   <app-explore-container name="This is the page with sanitized the html"
-                         [contentOnModal]="contentOnModal"
-                         [contentOnPage]="">
+                         [contentOnModal]="contentOnModal">
   </app-explore-container>
 
   <div [innerHTML]="sanitizer.bypassSecurityTrustHtml(contentOnPage)"></div>
 
+  <section>
+    <ion-label>An 'inline' Modal reference seems to work as expected</ion-label>
+    <ion-button id="modal-trigger" color="tertiary">Inline Modal</ion-button>
+  <ion-modal trigger="modal-trigger">
+    <ng-template>
+      <app-target-modal-component [targetMessage]="contentOnModal" ></app-target-modal-component>
+    </ng-template>
+  </ion-modal>
+  </section>
 </ion-content>

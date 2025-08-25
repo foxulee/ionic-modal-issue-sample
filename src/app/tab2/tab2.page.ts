@@ -12,9 +12,12 @@ export class Tab2Page {
   contentOnPage: any;
 
   constructor(public sanitizer: DomSanitizer) {
+    this.contentOnModal = `
+    <div style="color: red">Here is the content with sanitizer (public sanitizer: DomSanitizer; sanitizer.bypassSecurityTrustHtml(contentOnModal)).</div>
+    `;
     this.contentOnPage = `
     <div style="color: red">Here is the content with sanitizer (public sanitizer: DomSanitizer; sanitizer.bypassSecurityTrustHtml(contentOnPage)).</div>
-    `
+    `;
   }
 
 }

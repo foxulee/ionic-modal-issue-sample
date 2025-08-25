@@ -16,8 +16,7 @@
   </ion-header>
 
   <app-explore-container name="This is the page with sanitized the html"
-                         [contentOnModal]="contentOnModal"
-                         [contentOnPage]="">
+                         [contentOnModal]="contentOnModal">
   </app-explore-container>
 
   <div [innerHTML]="sanitizer.bypassSecurityTrustHtml(contentOnPage)"></div>

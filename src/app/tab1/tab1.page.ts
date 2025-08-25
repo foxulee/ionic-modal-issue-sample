@@ -13,7 +13,7 @@ export class Tab1Page {
 
   constructor(public sanitizer: DomSanitizer) {
     this.contentOnModal = "Test";
-    this.contentOnPage = "Here is the content without sanitizer. <div style='color: yellow !important;'>And also regular html</div>";
+    this.contentOnPage = `Here is the content without sanitizer. <div style="color: yellow !important;">And also regular html</div>`;
 
   }
 

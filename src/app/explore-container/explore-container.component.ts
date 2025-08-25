@@ -24,6 +24,7 @@ export class ExploreContainerComponent implements OnInit{
 
   }
   async openModal(){
+    console.log('openModal', this.contentOnModal);
     this.modal = await this.modalController.create({
       component: TargetModalComponent,
       cssClass: "target-message-modal",
