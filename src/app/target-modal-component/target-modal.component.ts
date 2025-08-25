@@ -9,13 +9,17 @@ import {ModalController} from "@ionic/angular";
   standalone: false
 })
 export class TargetModalComponent implements OnInit {
-  @Input()targetMessage = "";
+  @Input () targetMessage?: string;
 
-  dynamicHtml: SafeHtml;
-  constructor(public sanitizer: DomSanitizer, public modalController: ModalController) {
-    this.dynamicHtml = this.sanitizer.bypassSecurityTrustHtml(this.targetMessage);
+  dynamicHtml?: SafeHtml;
+  constructor(public sanitizer: DomSanitizer, public modalController: ModalController) { }
+
+  ngOnInit() {
+    console.log('TargetModalComponent (init)', this.targetMessage);
+    if(this.targetMessage) {
+      console.log('targetMessage: ', this.targetMessage);
+      this.dynamicHtml = this.sanitizer.bypassSecurityTrustHtml(this.targetMessage);
+    }
   }
-
-  ngOnInit() {}
 
 }

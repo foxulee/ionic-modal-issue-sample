@@ -15,9 +15,8 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="This is the page without sanitized the html"
-                         [contentOnModal]="contentOnModal"
-                         [contentOnPage]="">
+  <app-explore-container name="This page passes a string of 'Test' to the modal which doesn't require santization"
+                         [contentOnModal]="contentOnModal">
   </app-explore-container>
 
   <div [innerHTML]="contentOnPage" style="color: green"></div>
